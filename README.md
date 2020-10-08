@@ -27,15 +27,21 @@ Mainnet:
 
 _*_ It is possible to separate ancient directory from hot cache with `--datadir.ancient` options: 
 
-After initial sync of the full node the data size is growing faster,
-so it reccomended to truncate blockchain periodically
+After the initial fast sync of the full node, the data size is growing faster, so it recommended to truncate the blockchain periodically
 
 ### Contents
-- [Deployment in Ubuntu 20.04/18.04](#deployment-in-ubuntu)
+- [Deployment in Ubuntu](#deployment-in-ubuntu)
 
 ### Deployment in Ubuntu
-This recipe can be used for direct deployment in Ubuntu 20.04 or 18.04, creating Packer or Docker images.
-Download, update and run installation script: [geth-ubuntu/geth-install-ubuntu.sh](geth-ubuntu/geth-install-ubuntu.sh)
+This recipe can be used for direct deployment in *Ubuntu 20.04* or *18.04*, creating Packer or Docker images.
+Download, update and run [installation script](geth-ubuntu/geth-install-ubuntu.sh)
+
+```bash
+wget https://raw.githubusercontent.com/awesome-nodes/ethereum/master/geth-ubuntu/geth-install-ubuntu.sh
+chmod +x geth-install-ubuntu.sh
+sudo ./geth-install-ubuntu.sh
+```
+
 * Script detects x86_64 / arm64 platform automatically
 * Websocket and JSON-RPC api are enabled for localhost
-* `--cache=512` is set to fit 4GB RAM servers, i.g. Raspbery Pi4
+* `--cache=512` is set to fit into 4GB RAM servers, i.g. Raspbery Pi4. Remove to use default value 4096 for 8 GB RAM.

@@ -4,17 +4,17 @@ set -euo pipefail
 # Update version and checksum on the download page
 # https://geth.ethereum.org/downloads/
 
-export VERSION_HASH=1.9.22-c71a7e26
+export VERSION_HASH=1.9.24-cc05b050
 
 echo "==> Check architecture for version ${VERSION_HASH}"
 if [ $(uname --m) = x86_64 ]
 then
     export GETH=geth-linux-amd64-${VERSION_HASH}
-    export VERSION_CHECKSUM=c3b69840891c9a2d29cefa541269472a
+    export VERSION_CHECKSUM=7a332e42df859a84cc843779aba20cc7
 elif [ $(uname --m) = aarch64 ]
 then
     export GETH=geth-linux-arm64-${VERSION_HASH}
-    export VERSION_CHECKSUM=0b499f72c19f8f95204c2a8ee3634393
+    export VERSION_CHECKSUM=d4f166e5662c6f1049222aa940293b87
 else
     exit 1
 fi

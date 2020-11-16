@@ -26,7 +26,7 @@ This recipe can be used for direct deployment in *Ubuntu 20.04* or *18.04*, crea
 Download, update and run [installation script](geth-ubuntu/geth-install-ubuntu.sh)
 
 ```bash
-wget https://raw.githubusercontent.com/awesome-nodes/ethereum/master/geth-ubuntu/geth-install-ubuntu.sh
+wget https://raw.githubusercontent.com/awesome-nodes/geth-ubuntu/master/geth-install-ubuntu.sh
 chmod +x geth-install-ubuntu.sh
 sudo ./geth-install-ubuntu.sh
 ```

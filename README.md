@@ -16,7 +16,7 @@ _*_ It is possible to separate ancient directory from hot cache with `--datadir.
 Startig from geth version `1.13.1` geth support online prunning with option `--state.scheme=path`
 Any version before after the initial fast sync of the full node, the data size is growing faster, so it recommended to truncate the blockchain periodically.
 
-### Deployment in Ubuntu
+### Deployment on Ubuntu
 This recipe can be used for direct deployment on *Ubuntu 22.04* or *20.04*, creating Packer or Docker images.
 For initiall installation download edit and run [installation script](geth-ubuntu/geth-install-ubuntu.sh)
 
@@ -26,7 +26,7 @@ chmod +x geth-install-ubuntu.sh
 sudo ./geth-install-ubuntu.sh
 ```
 
-For update of existing installation run [update script](geth-ubuntu/geth.sh)
+To update an existing installation run [update script](geth-ubuntu/geth.sh)
 
 - Script detects x86_64 / arm64 platform automatically
 - Websocket and JSON-RPC api are enabled for public

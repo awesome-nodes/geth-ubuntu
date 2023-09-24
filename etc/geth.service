@@ -1,0 +1,33 @@
+[Unit]
+Description=Ethereum daemon
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ethereum
+Group=ethereum
+WorkingDirectory=/data/ethereum/execution/geth
+
+ExecStartPre=+/bin/chown -R ethereum:ethereum /data/ethereum/execution/geth
+
+ExecStart=/usr/local/bin/geth  --goerli \
+  --authrpc.vhosts='localhost' \
+  --authrpc.jwtsecret=/data/ethereum/execution/geth/jwtsecret \
+  --datadir=/data/ethereum/execution/geth \
+  --http --http.addr=0.0.0.0 \
+  --http.vhosts='*' --http.corsdomain='*' \
+  --http.api=eth,net,engine,admin,web3,debug \
+  --ws --ws.origins='localhost' --ws.api=eth,net,web3,debug \
+  --state.scheme=path
+
+PIDFile=/run/geth/geth.pid
+StandardOutput=journal
+StandardError=journal
+KillMode=process
+TimeoutSec=180
+Restart=always
+RestartSec=60
+
+[Install]
+WantedBy=multi-user.target
